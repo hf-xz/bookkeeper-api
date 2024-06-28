@@ -1,8 +1,8 @@
 from bson.objectid import ObjectId
 
-from database import database
+from database import get_collection
 
-student_collection = database.get_collection('students_collection')
+student_collection = get_collection('students_collection')
 
 
 # helpers
