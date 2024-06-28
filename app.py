@@ -8,7 +8,7 @@ app = FastAPI()
 app.include_router(StudentRouter, tags=['Student'], prefix='/student')
 
 @app.get('/', tags=['Root'], response_class=HTMLResponse)
-async def read_root():
+def read_root():
     return '''
 <html>
     <head>

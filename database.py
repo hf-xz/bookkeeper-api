@@ -1,7 +1,7 @@
 from os import getenv
 
-import motor.motor_asyncio
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 load_dotenv()
 
@@ -11,7 +11,7 @@ CONNECT_STRING = f'mongodb+srv://{MONGODB_AUTH}@{MONGODB_URL}'
 MONGODB_DATABASE = getenv('MONGODB_DATABASE')
 
 def get_database():
-    client = motor.motor_asyncio.AsyncIOMotorClient(CONNECT_STRING)
+    client = MongoClient(CONNECT_STRING)
     database = client.get_database(MONGODB_DATABASE)
     return database
 
