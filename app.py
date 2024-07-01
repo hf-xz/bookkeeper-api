@@ -1,11 +1,15 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-from apis.student.route import router as StudentRouter
+from apis.turnover.route import router as TurnoverRouter
 
-app = FastAPI()
+app = FastAPI(
+    title='Bookkeeper API',
+    description='API for Bookkeeper',
+    version='1.0',
+)
 
-app.include_router(StudentRouter, tags=['Student'], prefix='/student')
+app.include_router(TurnoverRouter, tags=['Turnover'], prefix='/turnover')
 
 @app.get('/', tags=['Root'], response_class=HTMLResponse)
 def read_root():
