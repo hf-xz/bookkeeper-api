@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 
 from apis.turnover.route import router as TurnoverRouter
 
+# 创建 FastAPI 实例
 app = FastAPI(
     title='Bookkeeper API',
     description='API for Bookkeeper',
@@ -26,6 +27,14 @@ def read_root():
     </body>
 </html>
 '''
+
+
+# 数据库迁移
+@app.get('/migrate', tags=['Root'])
+def migrate_database():
+    from database import migrate
+    migrate()
+    return {'message': 'Migrate successfully'}
 
 
 # 本地运行
