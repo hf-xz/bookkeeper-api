@@ -13,7 +13,7 @@ def turnover_serializer(turnover) -> dict:
         'tiCai': turnover['ti_cai'],
         'waiDian': turnover['wai_dian'],
         'fuCai': turnover['fu_cai'],
-        'onePercent': turnover['one_percent'],
+        'other': turnover['other'],
     }
 
 

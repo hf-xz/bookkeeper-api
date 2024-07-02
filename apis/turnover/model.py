@@ -8,7 +8,7 @@ class TurnoverSchema(BaseModel):
     ti_cai: float = Field(..., ge=0)
     wai_dian: float = Field(..., ge=0)
     fu_cai: float = Field(..., ge=0)
-    one_percent: float = Field(..., ge=0)
+    other: float = Field(..., ge=0)
 
     class Config:
         alias_generator = snake_to_camel
@@ -19,7 +19,7 @@ class TurnoverSchema(BaseModel):
                 'tiCai': 100,
                 'waiDian': 200,
                 'fuCai': 300,
-                'onePercent': 100,
+                'other': 100,
             }
         }
 
@@ -28,7 +28,7 @@ class UpdateTurnoverModel(BaseModel):
     ti_cai: float | None
     wai_dian: float | None
     fu_cai: float | None
-    one_percent: float | None
+    other: float | None
 
     class Config:
         alias_generator = snake_to_camel
@@ -38,6 +38,6 @@ class UpdateTurnoverModel(BaseModel):
                 'tiCai': 100,
                 'waiDian': 200,
                 'fuCai': 300,
-                'onePercent': 200,
+                'other': 200,
             }
         }
